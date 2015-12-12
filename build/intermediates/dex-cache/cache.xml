@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\m.sonasath\.gradle\caches\modules-2\files-2.1\com.michaelpardo\activeandroid\3.1.0-SNAPSHOT\4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08\activeandroid-3.1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\activeandroid-3.1.0-SNAPSHOT-8e89c813b7c5bb85973bbeb8b63524186f597b6c.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\libs\scribe-codepath-0.0.3.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="a580d06de954001f787e8d024bfcf931fe30bdda">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\scribe-codepath-0.0.3-7314e62d346c3e67403182f8b4a5e733f5762dfc.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\classes-01eaa18a39fb3ec1eac6c85a534cc2e81f2a525e.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\libs\codepath-oauth-0.4.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="e2bf2d92cfe90d44287c510d955d0c979631e99e">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\codepath-oauth-0.4.1-de4e406c5a769e2f21eae30e09d652c6d2b2fff0.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\libs\codepath-utils.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="10901a5ef726eacf1b2443b7f38dc4cc9cd3f7d4">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\codepath-utils-5f15d2a209610615bba3f57bac890cda5df4e451.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-eca387111e45c5676bb1042a7f6dd37a1534ed89.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\libs\org.apache.http.legacy.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="fa331331b626ee78c52bea16ce1e34b39e666ce5">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\org.apache.http.legacy-39c4011929f9400738cc7677d8ca86f92722f45a.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-c45988c9c68a91de734360e7120ddfc359c549cd.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\.gradle\caches\modules-2\files-2.1\com.loopj.android\android-async-http\1.4.8\77bbfe240e437ecb396d982afa0d3bd4f9090ba7\android-async-http-1.4.8.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="77bbfe240e437ecb396d982afa0d3bd4f9090ba7">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.8-470243d1b5eec354470c2dc0561be0d3ac1b86c0.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\classes-55582d335b93f2f3448f61dd446670f3b676d024.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\classes-fa1d2fd39738446329d1eee1f677a5cb43d817cb.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-fa71f8f0bb8ebf37a1c20c3086fdfbe98b03b238.jar" />
+    </item>
+    <item
+        jar="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\m.sonasath\Desktop\Moiz_All_Data\Moiz\AndroidStudioProjects\simpleTweets\app\build\intermediates\pre-dexed\debug\classes-eb30edf89c1848adf5b9b6e21a8696840889e5ca.jar" />
+    </item>
+
+</items>
