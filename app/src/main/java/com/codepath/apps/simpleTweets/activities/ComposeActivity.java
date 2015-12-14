@@ -9,9 +9,11 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,13 +35,23 @@ public class ComposeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose);
+        // To show back button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.twitter_icon);
+        // To show Logo on Action bar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.twitter_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        //Replace the back arrow with icon
+        //getSupportActionBar().setDisplayUseLogoEnabled(true);
+        //getSupportActionBar().setHomeAsUpIndicator(R.drawable.twitter_icon);
+        //Set the Title
         getSupportActionBar().setTitle(R.string.title_activity_Compose);
+
         // get the client
         client = TwitterApplication.getRestClient(); //singleton client
         etCompose = (EditText) findViewById(R.id.etcompose);
         etCompose.setSelection(0);
+        etCompose.requestFocus();
         tvCharCount = (TextView) findViewById(R.id.tvcharCount);
         btnCompose = (Button) findViewById(R.id.btnCompose);
 
@@ -86,6 +98,7 @@ public class ComposeActivity extends AppCompatActivity {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 Toast.makeText(ComposeActivity.this, "Unable to send tweet. Try again", Toast.LENGTH_LONG).show();
+                Log.d("MOIZ", errorResponse.toString());
             }
         });
     }

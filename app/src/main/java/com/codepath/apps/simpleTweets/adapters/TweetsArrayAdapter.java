@@ -2,6 +2,7 @@ package com.codepath.apps.simpleTweets.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,8 +113,12 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet> {
         }
 
         String relativeTimespan = ParseRelativeDate.getRelativeTimeAgo(tweet.getCreatedAt());
+        //Log.d("MOIZ", relativeTimespan + "    " + tweet.getCreatedAt());
         String[] timespanParts = relativeTimespan.split(" ");
         String formattedTimespan = timespanParts[0] + timespanParts[1].charAt(0);
+        if (formattedTimespan.contains("In")) {
+            formattedTimespan = timespanParts[1] + timespanParts[2].charAt(0);
+        }
         viewHolder.tvCreatedAt.setText(formattedTimespan);
 
         viewHolder.ivProfileImage.setImageResource(android.R.color.transparent); // clear out the old image for a recycle view

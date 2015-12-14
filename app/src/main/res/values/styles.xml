@@ -11,11 +11,9 @@
 
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@android:color/holo_blue_light</item>
-        <item name="android:icon">@drawable/twitter_icon</item>
 
         <!-- Support library compatibility -->
         <item name="background">@android:color/holo_blue_light</item>
-        <item name="icon">@drawable/twitter_icon</item>
     </style>
 
 

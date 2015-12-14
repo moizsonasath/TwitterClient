@@ -1,5 +1,7 @@
 package com.codepath.apps.simpleTweets.models;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -107,6 +109,7 @@ public class Tweet {
                 JSONObject tweetJson = jsonArray.getJSONObject(i);
                 Tweet tweet = Tweet.fromJSON(tweetJson);
                 if (tweet != null) {
+                    //Log.d("MOIZ", Long.toString(tweet.getUid()));
                     tweets.add(tweet);
                 }
             } catch (JSONException e) {
@@ -114,8 +117,6 @@ public class Tweet {
                 continue;
             }
         }
-
-
         //return finished list
         return tweets;
     }

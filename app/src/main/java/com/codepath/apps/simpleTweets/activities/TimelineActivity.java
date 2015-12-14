@@ -26,6 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TimelineActivity extends AppCompatActivity {
 
@@ -35,14 +36,20 @@ public class TimelineActivity extends AppCompatActivity {
     private ListView lvTweets;
     private SwipeRefreshLayout swipeContainer;
     public static final int REQ_CODE_COMPOSE_TWEET = 1;
-    public static final int DEFAULT_SINCE_ID = 1;
+    public static final int DEFAULT_SINCE_ID = 0;
+    public static final int DEFAULT_MAX_ID = 0;
+    private long oldMaxId = 0;
+    private long maxId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        // To show logo on action bar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.twitter_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        //set title on action bar
         getSupportActionBar().setTitle(R.string.title_activity_timeline);
         //find the listview
         lvTweets = (ListView) findViewById(R.id.lvTweets);
@@ -74,8 +81,7 @@ public class TimelineActivity extends AppCompatActivity {
                 // Your code to refresh the list here.
                 // Make sure you call swipeContainer.setRefreshing(false)
                 // once the network request has completed successfully.
-                aTweets.clear();
-                populateTimeline(DEFAULT_SINCE_ID);
+                refereshTimeline();
             }
         });
         // Configure the refreshing colors
@@ -84,7 +90,7 @@ public class TimelineActivity extends AppCompatActivity {
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
 
-        populateTimeline(DEFAULT_SINCE_ID);
+        populateTimeline(DEFAULT_SINCE_ID, DEFAULT_MAX_ID);
     }
 
     @Override
@@ -113,19 +119,27 @@ public class TimelineActivity extends AppCompatActivity {
         // Use the offset value and add it as a parameter to your API request to retrieve paginated data.
         // Deserialize API response and then construct new objects to append to the adapter
         //Log.d("MOIZ MOIZ", "Offset value " +offset);
-        populateTimeline(offset);
+        Tweet lastTweet = aTweets.getItem(aTweets.getCount() - 1);
+        maxId = lastTweet.getUid();
+        if (maxId == oldMaxId){
+            Log.d("Moiz", "Scroll Listener called twice for same max_id");
+            return;
+        }
+        oldMaxId = maxId;
+        //Log.d("MOIZ", "id of last tweet: " + maxId);
+        populateTimeline(DEFAULT_SINCE_ID, (maxId - 1));
     }
 
     //send API request to get JSON response
     //fill the listview by creating tweet objects from JSON
-    private void populateTimeline(int page) {
+    private void populateTimeline(final long since_id, final long max_id) {
         //first check if network connection is available
         if(isConnectedToNetwork() == false) {
             Toast.makeText(this.getApplicationContext(), "Please check your network connection!", Toast.LENGTH_LONG).show();
             swipeContainer.setRefreshing(false);
             return;
         }
-        client.getHomeTimeline(page, new JsonHttpResponseHandler(){
+        client.getHomeTimeline(since_id, max_id, new JsonHttpResponseHandler() {
             //sucess
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray json) {
@@ -133,7 +147,14 @@ public class TimelineActivity extends AppCompatActivity {
                 //Deserialize Json
                 //Create models and them to the adapter
                 //Load model data into listview
-                aTweets.addAll(Tweet.fromJSONArray(json));
+                if (since_id > 0) {
+                    ArrayList<Tweet> newTweets = Tweet.fromJSONArray(json);
+                    for (int i = newTweets.size() - 1; i >= 0; i--) {
+                        aTweets.insert(newTweets.get(i), 0);
+                    }
+                } else {
+                    aTweets.addAll(Tweet.fromJSONArray(json));
+                }
                 swipeContainer.setRefreshing(false);
             }
 
@@ -160,13 +181,18 @@ public class TimelineActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQ_CODE_COMPOSE_TWEET && resultCode == RESULT_OK) {
-            //Tweet tweet = (Tweet) data.getSerializableExtra("tweet");
-            //frgTweetList.getAdapter().insert(tweet, 0);
-            // TODO: save tweet.
+            refereshTimeline();
             Toast.makeText(this.getApplicationContext(), "Successfully Tweeted!!", Toast.LENGTH_SHORT).show();
         }
     }
 
+    // Referesh timeline with new tweets at the top
+    private void refereshTimeline() {
+        Tweet firstTweet = aTweets.getItem(0);
+        long sinceId = firstTweet.getUid();
+        //Log.d("MOIZ", "id of first tweet: " + sinceId);
+        populateTimeline(sinceId, DEFAULT_MAX_ID);
+    }
     private boolean isConnectedToNetwork() {
         ConnectivityManager connMgr = (ConnectivityManager)this.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
